@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="hack">
+  <canvas id="matrix"></canvas>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <div class="hud">
+    <div class="topbar">
+      <span class="red">● REMOTE SESSION ACTIVE</span>
+      <span id="sess">SESSION 0x0000</span>
+      <span id="clock">00:00:00</span>
+    </div>
+
+    <div class="grid">
+      <div class="panel term">
+        <div class="ptitle">root@kali: ~ — meterpreter</div>
+        <pre id="term"></pre>
+      </div>
+
+      <div class="col">
+        <div class="panel cam">
+          <div class="ptitle">CAM 01 — LIVE <span class="rec">● REC</span></div>
+          <canvas id="cam"></canvas>
+          <div class="camtxt" id="camtime"></div>
+        </div>
+        <div class="panel">
+          <div class="ptitle">NETWORK OUT <span id="kbps">0 KB/s</span></div>
+          <canvas id="net"></canvas>
+        </div>
+        <div class="panel files">
+          <div class="ptitle">FILE ENCRYPTION <span id="fcount">0</span> files</div>
+          <div id="flist"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="statusbar">
+      <span id="s1">PKTS: 0</span><span id="s2">CREDS: 0</span><span id="s3">UPLOAD: 0 MB</span><span class="red blink">● DO NOT POWER OFF</span>
+    </div>
+  </div>
+
+  <div id="warn" class="hidden">
+    <div class="wbox">
+      <div class="wicon">⚠</div>
+      <h1 class="glitch" data-text="DEVICE COMPROMISED">DEVICE COMPROMISED</h1>
+      <p>Remote operator has full control of this system.</p>
+      <p class="mono" id="wid"></p>
+      <p class="small">All files are being copied and encrypted.</p>
+    </div>
+  </div>
+
+  <div id="tapZone"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
